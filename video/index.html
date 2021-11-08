@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- preloader -->
+    <div id="preloader">
+        <img src="Assets/Videos/preloader.gif" width="150" height="150" alt="preloader"/>
+    </div>
+    <!-- main app -->
+    <main id="mainApp">
+        <div id="appBody">
+            <div class="video-container">
+                <!-- main video -->
+                <video id="heroVideo" autoplay loop muted>
+                    <source src="./Assets/Videos/video.mp4" type="video/mp4" />
+                    Your browser does not support HTML video.
+                </video>
+                <!-- blackish layout -->
+                <div class="vid-layout">
+                    <!-- app title -->
+                    <h1 class="app-title">Video Project</h1>
+                    <!-- video switch -->
+                    <button class="switch-btn">
+                        <span>
+                            play
+                        </span>
+                        <span>
+                            pause
+                        </span>
+                        <span class="switch"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>

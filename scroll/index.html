@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- modals & fixed buttons -->
+    <span id="scrollMeUp"><i class="fas fa-arrow-circle-up"></i></span>
+    <!-- main app -->
+    <main id="mainApp">
+        <!-- header -->
+        <header id="mainHeader" class="flex-row">
+            <div class="header-inner flex-row">
+                    <div class="logo-container flex-row">
+                        <img class="logo" src="Assets/Images/logo.svg" alt="logo" loading="lazy"/>
+                        <span class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></span>
+                    </div>
+                    <nav class="navbar" id="navContainer">
+                        <ul class="nav-links flex-row">
+                            <li><a href="#home" class="nav-link">Home</a></li>
+                            <li><a href="#about" class="nav-link">About</a></li>
+                            <li><a href="#services" class="nav-link">Services</a></li>
+                            <li><a href="#tours" class="nav-link">Tours</a></li>
+                        </ul>
+                    </nav>   
+            </div>
+        </header>  
+        <!-- hero -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <h2>SCROLL PROJECT</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque sunt in? Id, necessitatibus quos quisquam distinctio laudantium fugiat?</p>
+                <a href="#tours" class="explore-btn">Explore Tours</a>
+            </div>
+        </section> 
+        <!-- website sections -->
+        <section id="about" class="about-us home-section">
+            <h3 class="section-title">About <span>Us</span></h3>
+        </section>
+        <section id="services" class="services home-section">
+            <h3 class="section-title">Our <span>Services</span></h3>
+        </section>
+        <section id="tours" class="tours home-section">
+            <h3 class="section-title">Featured <span>Tours</span></h3>
+        </section>
+        
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <p>Copyright © Backroads Travel Tours Company <span id="year">2021</span>. All Rights Reserved</p>
+    </footer>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>

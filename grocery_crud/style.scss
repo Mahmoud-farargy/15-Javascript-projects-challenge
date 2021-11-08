@@ -1,0 +1,248 @@
+*, ::after, ::before{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+}
+
+:root{
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-5: hsl(205, 78%, 60%);
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --clr-gold: #c59d5f;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+}
+body, h1,h2, h3, h4, h5,h6, p{
+    font-family: var(--ff-secondary);
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.main-container{  
+    padding:1rem;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+// app
+#mainApp{
+    width: 100%;
+    .app-container{
+       width: 100%;
+       min-height: 100vh;
+       display: grid;
+       place-items: center;
+       .grocery-card{
+           background-color: var(--clr-white);
+           box-shadow: var(--light-shadow);
+           border-radius: var(--radius);
+           text-align: center;
+           width: 600px;
+           min-height: 200px;
+           padding: 1.7rem 1.8rem  2.2rem;
+           h1{
+               margin-bottom: 1.9rem;
+           }
+           .message{
+               min-height: 2rem;
+               padding:0.4rem 0.4rem;;
+               margin-bottom: 0.6rem;
+               visibility: hidden;
+           }  
+            .message.error{
+                background-color: rgb(250, 178, 178);;
+                color: var(--clr-red-dark);
+            }
+            .message.success{
+                background-color: hsl(124, 90%, 88%);
+                color: var(--clr-green-dark);
+            }
+           #groceryForm{
+               width: 100%;
+               $paddingREM: 0.46rem;
+               align-items: center;
+               justify-content: center;
+               gap: 0.6rem 0;
+               flex-wrap: wrap;
+               margin: 0 auto;
+               margin-bottom: 2rem;
+               #groceryInput{
+                   background-color: var(--clr-grey-10);
+                   border-radius: var(--radius) 0 0 var(--radius);
+                   border: none;
+                   font-size: 1rem;
+                   margin-right: 0;
+                   padding: 0.50rem 0.50rem 0.50rem 1rem;
+                   flex: 1 0 auto;
+                   &:focus{
+                       outline:none;
+                   }
+               }
+               input[type="submit"]{
+                   background-color: var(--clr-primary-8);
+                   color: var(--clr-primary-2);
+                   content: var(--clr-primary-2);
+                   transition: var(--transition);
+                   border-color: transparent;
+                   font-size: 0.85rem;
+                   padding: $paddingREM;
+                   letter-spacing: 2px;
+                   border-radius: 0 var(--radius) var(--radius) 0;
+                   text-align: center;
+                   cursor: pointer;
+                   text-transform: capitalize;
+               }
+           }
+           #groceryItems{
+               width: 100%;
+               justify-content: center;
+               .grocery-item{
+                background-color: rgba(0, 0, 0, 0.02);
+                border-radius: var(--radius);
+                padding: 0.25rem 1rem;
+                width: 100%;
+                transition: var(--transition);
+                margin-bottom: 0.4rem;
+                &:hover{
+                    background-color: var(--clr-grey-10);
+                    color: var(--clr-grey-1);
+                }
+                   p{
+                       flex: 1 0 auto;
+                       text-align: start;
+                   }
+                   p.completed{
+                       text-decoration: line-through;
+                   }
+                   button{
+                       border:none;
+                       background: transparent;
+                       font-size: 0.9rem;
+                       margin-right: 0.5rem;
+                       cursor: pointer;
+                       &:last-of-type{
+                           margin-right: 0px;
+                       }
+                       i{
+                         transition: var(--transition);  
+                       }
+                   }
+                   button i.fa-edit{
+                        color: var(--clr-green-light);
+                        &:hover{
+                            color:var(--clr-green-dark);
+                        }
+                   }
+                   button i.fa-trash{
+                        color: var(--clr-red-light);
+                        &:hover{
+                           color: var(--clr-red-dark);
+                        }
+                    }
+               }
+           }
+
+           .clear{
+               display: none;
+               margin-top: 1rem;
+               text-transform: capitalize;
+               cursor: pointer;
+               span{
+                    color: var(--clr-red-light);
+               }
+           }
+           div.show-element{
+            display: inline-block;
+           }
+       }
+    }
+}
+// responsive
+@media only screen and (min-width: 800px){
+    #mainApp{
+        .questions-container{
+            h1{
+                font-size: 2.5rem;
+            }   
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        line-height: 1;
+    }
+}
+@media only screen and (max-width: 900px){
+
+        .main-container{
+            width: 99%;
+            padding: 0;
+        }
+        // #mainApp{
+        //     .app-container{
+        //         .grocery-card{
+
+        //         }
+        //      }
+        // }
+}
+@media only screen and (max-width: 600px){
+
+    .main-container{
+        width: 99%;
+        padding: 0;
+    }
+    #mainApp{
+        .app-container{
+            .grocery-card{
+                width: 95%;
+                padding: 1.4rem 1.2rem;
+            }
+         }
+    }
+}

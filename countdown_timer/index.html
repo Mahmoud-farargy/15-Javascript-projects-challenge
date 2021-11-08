@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- main app -->
+    <main id="mainApp">
+        <div id="appBody">
+          <section class="giveaway-section">
+                <img src="Assets/Images/gift.jpeg"  alt="giveaway iPhone" loading="lazy"/>
+                <div class="giveaway-info-container">
+                    <!-- section header -->
+                    <div class="giveaway-info-header">
+                        <h3>Old iphone giveaway</h3>
+                        <h4>giveaway Ends On <span id="deadlineTime">Tuesday, 16 November 2021</span>AM</h4>   
+                    </div>
+                    <!-- section description -->
+                    <p class="giveaway-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit molestiae cum libero atque ut voluptate qui consectetur aliquid incidunt voluptatem quos, dolore, non commodi quaerat aliquam eligendi, quisquam totam blanditiis.</p>
+                    <!-- section countdown cards -->
+                    <div class="giveaway-countdowns flex-row">
+                        <div class="deadline-card">
+                            <div class="deadline-inner">
+                                <h4 id="days">00</h4>
+                                <i>Days</i>
+                            </div>
+                        </div>
+                        <div class="deadline-card">
+                            <div class="deadline-inner">
+                                <h4 id="hours">00</h4>
+                                <i>Hours</i>  
+                            </div>
+                        </div>
+                        <div class="deadline-card">
+                            <div class="deadline-inner">
+                                <h4 id="minutes">00</h4>
+                                <i>Mins</i>    
+                            </div>
+                        </div>
+                        <div class="deadline-card">
+                            <div class="deadline-inner">
+                                <h4 id="seconds">00</h4>
+                                <i>Secs</i>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+          </section>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>

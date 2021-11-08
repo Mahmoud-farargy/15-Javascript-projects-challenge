@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- main app -->
+    <main id="mainApp">
+        <div id="appBody">
+           <div class="title-box">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam!</p>
+           </div>
+           <div class="app-inner">
+                <img src="Assets/Images/hero-bcg.jpeg" alt="mountains" loading="lazy"/>
+                <section class="tabs-section">
+                        <div class="tabs-header" id="tabsHeader">
+                            <button data-id="history" class="active-tab">History</button>
+                            <button data-id="vision">Vision</button>
+                            <button data-id="goals">Goals</button>
+                        </div>
+                        <div class="current-tab-body" id="tabsBody">
+                            <!-- dynamic data flow -->
+                        </div>
+                </section>
+           </div>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>

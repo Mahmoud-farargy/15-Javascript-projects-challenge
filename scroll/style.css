@@ -1,0 +1,380 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+}
+
+:root {
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-secondary:  hsla(182, 63%, 54%);
+  --clr-black: #222;
+  --clr-gold: #c59d5f;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: var(--ff-secondary);
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#scrollMeUp {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+#scrollMeUp i {
+  border-radius: 50%;
+  background-color: var(--clr-secondary);
+  color: var(--clr-white);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.2em;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  -webkit-box-shadow: var(--dark-shadow);
+          box-shadow: var(--dark-shadow);
+}
+
+#scrollMeUp i:hover {
+  background-color: var(--clr-primary-4);
+}
+
+#mainApp {
+  width: 100%;
+}
+
+#mainApp #mainHeader {
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  height: auto;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+#mainApp #mainHeader .header-inner {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+#mainApp #mainHeader .header-inner .logo-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#mainApp #mainHeader .header-inner .logo-container .logo {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#mainApp #mainHeader .header-inner .logo-container .menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  padding: 0 0.2rem;
+  color: var(--clr-grey-1);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+#mainApp #mainHeader .header-inner .logo-container .menu-btn:hover {
+  color: var(--clr-primary-3);
+}
+
+#mainApp #mainHeader .header-inner .navbar {
+  height: 0;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+#mainApp #mainHeader .header-inner .navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#mainApp #mainHeader .header-inner .navbar ul li {
+  cursor: pointer;
+  padding: 0;
+  margin-right: 8px;
+}
+
+#mainApp #mainHeader .header-inner .navbar ul li a {
+  text-decoration: none;
+  padding: 0.75rem;
+  color: var(--clr-white);
+  font-size: 1.1rem;
+  display: block;
+  letter-spacing: var(--spacing);
+  font-weight: 500;
+  background: transparent;
+}
+
+#mainApp #mainHeader .header-inner .navbar ul li:last-of-type {
+  margin-right: 0;
+}
+
+#mainApp .hero {
+  width: 100%;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 1rem 1.2rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(63, 208, 212, 0.5)), to(rgba(0, 0, 0, 0.7))), url("./Assets/Images/hero-bcg.jpeg") center center/cover no-repeat;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)), url("./Assets/Images/hero-bcg.jpeg") center center/cover no-repeat;
+}
+
+#mainApp .hero .hero-inner {
+  text-align: center;
+  color: var(--clr-white);
+}
+
+#mainApp .hero .hero-inner h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: inherit;
+  margin-bottom: 0.75rem;
+}
+
+#mainApp .hero .hero-inner p {
+  font-size: 1rem;
+  margin: 0 auto 1.4rem;
+  max-width: 40rem;
+}
+
+#mainApp .hero .hero-inner .explore-btn {
+  text-decoration: none;
+  border: 2px solid var(--clr-white);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  background: transparent;
+  border-radius: 0;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  font-size: 0.875rem;
+  letter-spacing: var(--spacing);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+#mainApp .hero .hero-inner .explore-btn:hover {
+  background: var(--clr-white);
+  color: var(--clr-secondary);
+}
+
+#mainApp .home-section {
+  width: 100%;
+  min-height: 80vh;
+  padding: 3rem 1.2rem;
+}
+
+#mainApp .home-section .section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--clr-grey-1);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+#mainApp .home-section .section-title span {
+  color: var(--clr-secondary);
+  font-size: inherit;
+}
+
+#mainApp .home-section:nth-child(even) {
+  background-color: var(--clr-white);
+}
+
+#mainApp .home-section:nth-child(odd) {
+  background-color: var(--clr-grey-10);
+}
+
+.footer {
+  background: var(--clr-grey-1);
+  padding: 5rem 1rem;
+  color: var(--clr-white);
+}
+
+.footer p {
+  text-transform: capitalize;
+  margin-bottom: 0;
+  letter-spacing: var(--spacing);
+  text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  #mainApp header#mainHeader.fixed-nav {
+    background-color: var(--clr-white);
+    color: var(--clr-grey-1);
+    -webkit-box-shadow: var(--dark-shadow);
+            box-shadow: var(--dark-shadow);
+  }
+  #mainApp header#mainHeader.fixed-nav .navbar ul li {
+    width: 100%;
+  }
+  #mainApp header#mainHeader.fixed-nav .navbar ul li a {
+    color: var(--clr-grey-1);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #mainApp #mainHeader {
+    -webkit-box-shadow: var(--dark-shadow);
+            box-shadow: var(--dark-shadow);
+    background-color: var(--clr-white);
+  }
+  #mainApp #mainHeader .header-inner {
+    width: 100%;
+    margin: 0;
+    display: block;
+  }
+  #mainApp #mainHeader .header-inner .logo-container .menu-btn, #mainApp #mainHeader .header-inner .navbar ul {
+    display: block;
+  }
+  #mainApp #mainHeader .header-inner .logo-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #mainApp #mainHeader .header-inner .logo-container .menu-btn {
+    display: block;
+  }
+  #mainApp #mainHeader .header-inner .navbar ul li {
+    width: 100%;
+  }
+  #mainApp #mainHeader .header-inner .navbar ul li a {
+    -webkit-transition: var(--transition);
+    transition: var(--transition);
+    color: var(--clr-grey-5);
+    padding: 0.75rem 0px;
+  }
+  #mainApp #mainHeader .header-inner .navbar ul li:hover a {
+    color: var(--clr-grey-1);
+  }
+  #mainApp .hero .hero-inner h2 {
+    font-size: 3rem;
+  }
+  #mainApp .hero .hero-inner p {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #mainApp .hero .hero-inner {
+    width: 100%;
+  }
+  #mainApp .hero .hero-inner h2 {
+    font-size: 2.1rem;
+  }
+  #mainApp .hero .hero-inner p, #mainApp .hero .hero-inner a.explore-btn {
+    font-size: 0.9rem;
+  }
+  #mainApp .hero .hero-inner a.explore-btn {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+  #mainApp .home-section .section-title {
+    font-size: 1.8rem;
+  }
+  .footer {
+    letter-spacing: normal;
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

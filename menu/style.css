@@ -1,0 +1,264 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+}
+
+:root {
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --clr-gold: #c59d5f;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: var(--ff-secondary);
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#mainApp {
+  width: 100%;
+}
+
+#mainApp #appBody {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+#mainApp #appBody .section-title {
+  text-align: center;
+}
+
+#mainApp #appBody .section-title h1 {
+  font-size: 4rem;
+}
+
+#mainApp #appBody .section-title .title-underline {
+  width: 4rem;
+  background-color: var(--clr-gold);
+  height: 4px;
+  margin: 1.2rem auto 2rem auto;
+}
+
+#mainApp #appBody .tools-box {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+#mainApp #appBody .tools-box button {
+  padding: 0.3rem 0.6rem;
+  color: var(--clr-gold);
+  border-color: var(--clr-gold);
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-right: 15px;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  background: transparent;
+  cursor: pointer;
+}
+
+#mainApp #appBody .tools-box button:focus {
+  outline: none;
+}
+
+#mainApp #appBody .tools-box button:hover {
+  background-color: var(--clr-gold);
+  color: var(--clr-white);
+}
+
+#mainApp #appBody .tools-box button:last-of-type {
+  margin-right: 0;
+}
+
+#mainApp #appBody #menuList {
+  width: 100%;
+}
+
+#mainApp #appBody #menuList ul#menuUL {
+  padding: 0;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 3rem 2rem;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: var(--max-width);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem 2rem;
+  max-width: 25rem;
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--radius);
+  border: 0.25rem solid var(--clr-gold);
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item .item-info header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px dotted var(--clr-grey-1);
+  margin-bottom: 0.7rem;
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item .item-info header h4 {
+  color: var(--clr-grey-1);
+  padding-bottom: 0.5rem;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item .item-info header h4.item-title {
+  width: 75%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item .item-info header h4.item-price {
+  color: var(--clr-gold);
+}
+
+#mainApp #appBody #menuList ul#menuUL li.menu-item .item-info header p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: var(--clr-grey-5);
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+@media only screen and (min-width: 800px) {
+  h4 {
+    font-size: 1rem;
+  }
+  #mainApp #appBody .section-title h1 {
+    font-size: 2.5rem;
+    letter-spacing: var(--spacing);
+  }
+  #mainApp #appBody #menuList ul#menuUL li.menu-item {
+    -ms-grid-columns: 255px 1fr;
+        grid-template-columns: 255px 1fr;
+    max-width: 40rem;
+    gap: 0 1.25rem;
+  }
+  #mainApp #appBody #menuList ul#menuUL li.menu-item img {
+    height: 175px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-container {
+    width: 99%;
+    padding: 0;
+  }
+  #mainApp #appBody .section-title h1 {
+    font-size: 1.8rem;
+  }
+  #mainApp #appBody #menuList ul#menuUL {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

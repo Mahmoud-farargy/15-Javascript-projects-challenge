@@ -1,0 +1,286 @@
+*, ::after, ::before{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+}
+
+:root{
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-5: hsl(205, 78%, 60%);
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --clr-gold: #c59d5f;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --slight-shadow: 0 1px 15px rgba(0, 0, 0, 0.08);
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+}
+body, h1,h2, h3, h4, h5,h6, p{
+    font-family: var(--ff-secondary);
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.main-container{  
+    padding:1rem;
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+// app
+#mainApp{
+    width: 100%;
+    min-height: 100vh;
+    #appBody{
+        width: 100%;
+        padding: 5rem 0;
+        h1{
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .slider-section{
+            width: 80vw;
+            max-width: 80vw;
+            margin: 0 auto;
+            padding: 0 0.3rem;
+            margin-bottom: 0.3rem;
+            .slider-items-list{
+                position: relative;
+                border: 4px solid var(--clr-primary-5);
+                border-radius: 0.5rem;
+                overflow: hidden; //very important
+                margin-bottom: 1.2rem;
+                height: 60vh;
+                display: grid;
+                place-items: center;
+                list-style: none;
+                padding: 0;
+                .slider-item{
+                    background-color: var(--clr-primary-9);
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    // slides translates
+                    transition: transform 250ms ease-in-out;
+
+                    // ------------------------------
+                    // This is hidden just to demonstrate how a slider works.
+                    // we can set this dynamically using Javascript
+                    // 
+                    // &:nth-child(1){
+                    //     left:0;
+                    // }
+                    // &:nth-child(2){
+                    //     left:100%;
+                    // }
+                    // &:nth-child(3){
+                    //     left:200%;
+                    // }
+                    // &:nth-child(4){
+                    //     left:300%;
+                    // }
+                    // &:nth-child(5){
+                    //     left:400%;
+                    // }
+                    // 
+                    // By controlling translateX the slider will move accordingly
+                    // transform: translateX(-200%);
+                    // ------------------------------
+                    .slider-container{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        img{
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            z-index: 2;
+                        }
+                        .slider-item-inner{
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            top:0;
+                            left:0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 5;
+                            color: var(--clr-white);
+                            .slider-number{
+                                font-size: 5rem;
+
+                            }
+                        } 
+                    }
+
+                }
+            }
+            .slider-btns{
+                align-items: center;
+                gap: 2rem 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                button{
+                    text-align: center;
+                    border:none;
+                    text-transform: capitalize;
+                    font-size: 1.75rem;
+                    background: transparent;
+                    cursor: pointer;
+                    color: var(--clr-grey-5);
+                    transition: var(--transition);
+                    margin: 0 0.25rem;
+                    &:focus{
+                        outline: none;
+                    }
+                    &:hover{
+                        color: var(--clr-grey-3);
+                    }
+                }
+            }
+        }
+    }
+}
+h1{
+    color: var(--clr-grey-1);
+    font-size: 3rem;
+}
+h4{
+    font-size: 0.875rem;
+}    
+h1, h2, h3, h4{
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    margin-bottom: 0.75rem;
+}
+
+// responsive
+@media only screen and (min-width: 900px){
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4{
+        font-size: 1rem;
+    }
+    #mainApp{
+        #appBody{
+            .slider-section{
+                .slider-items-list{
+                    height: 70vh;
+                }
+            }
+        }
+    }
+    h1, h2, h3, h4, h5, h6{
+        line-height: 1;
+    }
+
+}
+@media only screen and (min-width: 768px){
+    #mainApp{
+        #appBody{
+            .slider-section{
+                .slider-items-list{
+                    height: 60vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 576px){
+    #mainApp{
+        #appBody{
+            .slider-section{
+                .slider-items-list{
+                    height: 55vh;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+@media only screen and (max-width: 670px){
+        .main-container{
+            width: 99%;
+            padding: 0;
+        }
+        h1{
+            font-size: 2rem;
+        }
+        h2{
+            font-size: 1.7rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+        h4 {
+            font-size: 1.1rem;
+        }
+        h5 {
+            font-size: 0.9rem;
+        }
+        h6 {
+            font-size: 0.8rem;
+        }
+        // #mainApp{
+        //     #appBody{
+        //         .slider-section{
+                   
+        //         }
+        //     }
+        // }
+}

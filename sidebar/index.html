@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+    <!-- main app -->
+    <main id="mainApp" class="flex-column">
+        <!-- header -->
+        <header class="main-header">
+            <div class="header-inner main-container flex-row">
+                <span class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></span>
+            </div>
+        </header>
+        <aside id="sidebar">
+            <div class="sidebar-inner">
+                <!-- sidebar header -->
+                <span class="sidebar-header flex-row">
+                   <span class="logo">Mahmoud <i>Farargy</i></span>
+                   <span id="closeSidebar">&times;</span>
+                </span>
+                  <!-- sidebar nav links -->
+                <nav class="sidebar-nav">
+                    <ul class="flex-column">
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#projects">projects</a></li>
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                </nav>
+                <!-- sidebar social media -->
+                <div class="social-media-links">
+                    <ul class="flex-row">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-sketch"></i></a></li>
+                    </ul>  
+                </div>
+            </div>
+        </aside>
+        <!-- app body -->
+        <div id="appBody"></div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+</html>

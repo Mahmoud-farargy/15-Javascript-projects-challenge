@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Content -->
+    <main id="mainApp">
+        <!-- Header -->
+        <header id="appHeader">
+            <div class="header-inner flex-row">
+                <span class="logo">Color Flipper</span>
+                <nav>
+                    <ul class="color-modes flex-row">
+                        <li id="simpleMode" class="active-mode">Simple</li>
+                        <li id="hexMode">Hex</li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        <!-- Body -->
+        <div id="appBody">
+            <div class="upper-section flex-column">
+                <div class="upper-section-inner flex-column">
+                    <span class="current-color flex-row">Background Color: <strong> rgb(14, 138, 101);</strong></span>
+                    <button id="changeBColorBtn">Click Me</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

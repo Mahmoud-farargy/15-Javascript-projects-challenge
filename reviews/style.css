@@ -1,0 +1,261 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+}
+
+:root {
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  --clr-primary-5: hsl(205, 78%, 60%);
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: var(--ff-secondary);
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#mainApp {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+#mainApp .app-inner {
+  width: 80vw;
+  max-width: var(--fixed-width);
+}
+
+#mainApp .app-inner .title {
+  font-size: 2.5rem;
+  letter-spacing: var(--spacing);
+  position: relative;
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+
+#mainApp .app-inner .title .title-underline {
+  display: block;
+  width: 100%;
+  width: 5rem;
+  height: 0.25rem;
+  margin: 1rem auto  0 auto;
+  background-color: var(--clr-primary-5);
+}
+
+#mainApp .app-inner article.review-card {
+  overflow-x: hidden;
+  border-radius: 10px;
+  background-color: var(--clr-white);
+  padding: 1.5rem 2rem;
+  -webkit-box-shadow: var(--light-shadow);
+          box-shadow: var(--light-shadow);
+  text-align: center;
+}
+
+#mainApp .app-inner article.review-card .img-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+  border-radius: 50%;
+}
+
+#mainApp .app-inner article.review-card .img-container::before {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  left: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primary-5);
+  border-radius: 50%;
+}
+
+#mainApp .app-inner article.review-card .img-container::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10e";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--clr-white);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
+  background-color: var(--clr-primary-5);
+}
+
+#mainApp .app-inner article.review-card .img-container img.user-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+#mainApp .app-inner article.review-card .review-inner h4 {
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+#mainApp .app-inner article.review-card .review-inner h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--clr-primary-5);
+}
+
+#mainApp .app-inner article.review-card .review-inner .switch-btns {
+  margin-bottom: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#mainApp .app-inner article.review-card .review-inner .switch-btns button {
+  border: none;
+  background: transparent;
+  margin-right: 20px;
+  color: var(--clr-primary-7);
+  font-size: 1.2rem;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+#mainApp .app-inner article.review-card .review-inner .switch-btns button:hover {
+  color: var(--clr-primary-5);
+}
+
+#mainApp .app-inner article.review-card .review-inner .switch-btns button:last-of-type {
+  margin-right: 0;
+}
+
+#mainApp .app-inner article.review-card .review-inner .switch-btns button:focus {
+  outline: none;
+}
+
+#mainApp .app-inner article.review-card .review-inner p#quote {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-bottom: 0.7rem;
+  color: var(--clr-grey-5);
+}
+
+#mainApp .app-inner article.review-card .review-inner #randomBtn {
+  border-color: var(--clr-primary-5);
+  border-radius: var(--radius);
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  padding: 0.3rem 0.6rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+#mainApp .app-inner article.review-card .review-inner #randomBtn:hover {
+  background-color: var(--clr-primary-4);
+  color: var(--clr-black);
+}
+
+@media only screen and (min-width: 800px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  #mainApp .app-inner {
+    width: 93%;
+  }
+  #mainApp .app-inner article.review-card {
+    padding: 1.5rem 1rem;
+  }
+  #mainApp .app-inner .title {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

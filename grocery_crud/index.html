@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Crud</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- main app -->
+    <main id="mainApp">
+        <div class="app-container">
+            <div class="grocery-card">
+                <div id="alertMsg" class="message success">
+                    <p>error</p>
+                </div>
+                <!-- app title -->
+                <h1>Grocery Bud</h1>
+                <!-- form -->
+                <form id="groceryForm" class="flex-row">
+                    <input type="text" placeholder="e.g. eggs" id="groceryInput" />
+                    <input type="submit" role="button" value="Add"  />
+                </form>
+                <!-- added items -->
+                <ul id="groceryItems" class="flex-column">
+                    <!-- items will be generated dynamically using js -->
+                </ul>
+                <div class="clear">
+                     <span id="clearItems">Clear Items</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>

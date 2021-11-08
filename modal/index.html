@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- modal(s) -->
+    <div id="mainModal">
+        <div id="backdrop" class="backdrop"></div>
+        <div class="modal-inner">
+                <div class="modal-content card">
+                    <!-- modal header -->
+                    <div class="modal-header flex-row">
+                        <span id="closeModal">&times;</span>
+                    </div>
+                    <!-- modal body -->
+                    <div class="modal-body">
+                        <h1>Modal Content</h1>
+                    </div>
+                    <!-- modal footer -->
+                    <div class="modal-footer"></div>
+                </div>
+        </div>
+    </div>
+    <!-- main app -->
+    <main id="mainApp" class="flex-column">
+        <!-- header -->
+        <header class="main-header"></header>
+        <!-- app body -->
+        <div id="appBody">
+            <div class="hero">
+                <div class="hero-inner card">
+                    <h1>Modal Project</h1>
+                    <div class="btns-box flex-column">
+                        <button id="openModal">Open modal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+</html>

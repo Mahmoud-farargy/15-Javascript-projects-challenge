@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- main app -->
+    <main id="mainApp">
+        <div id="appBody">
+            <h1>Gallery</h1>
+            <section class="slider-section">
+                <!-- slides -->
+                <ul class="slider-items-list">
+                    <!-- first slide -->
+                    <li class="slider-item">
+                        <div class="slider-container">
+                            <img src="Assets/Images/img-1.jpeg" alt="beach" loading="lazy">
+                            <div class="slider-item-inner flex-column">
+                                <h2 class="slider-number">1</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- second slide -->
+                    <li class="slider-item">
+                        <div class="slider-container">
+                            <img src="Assets/Images/img-2.jpeg" alt="beach" loading="lazy">
+                            <div class="slider-item-inner flex-column">
+                                <h2 class="slider-number">2</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- third slide -->
+                    <li class="slider-item">
+                        <div class="slider-container">
+                            <img src="Assets/Images/img-3.jpeg" alt="beach" loading="lazy">
+                            <div class="slider-item-inner flex-column">
+                                <h2 class="slider-number">3</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- forth slide -->
+                    <li class="slider-item">
+                        <div class="slider-container">
+                            <img src="Assets/Images/img-4.jpeg" alt="beach" loading="lazy">
+                            <div class="slider-item-inner flex-column">
+                                <h2 class="slider-number">4</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- forth slide -->
+                    <li class="slider-item">
+                        <div class="slider-container">
+                            <img src="Assets/Images/img-5.jpeg" alt="beach" loading="lazy">
+                            <div class="slider-item-inner flex-column">
+                                <h2 class="slider-number">5</h2>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- tool box -->
+                <div class="slider-btns flex-row">
+                    <button role="button" data-direction="left" class="prevSlide">
+                        Prev
+                    </button>
+                    <button role="button" data-direction="right" class="nextSlide">
+                        Next
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- scripts -->
+    <script defer src="script.js"></script>
+</body>
+
+</html>
